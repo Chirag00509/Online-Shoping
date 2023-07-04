@@ -32,7 +32,7 @@ export class CartService {
   getTotalPrice() : number {
     let grandTotal = 0;
     this.cartItemList.map((products : any) => {
-      grandTotal += products.originalPrice
+      grandTotal += products.discountPrice
     })
 
     return grandTotal;
