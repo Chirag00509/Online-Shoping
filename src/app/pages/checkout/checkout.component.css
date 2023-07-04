@@ -17,17 +17,13 @@ body {
   padding-right: 50px;
   padding-top: 30px;
   padding-bottom: 30px;
-  
   margin-top: 50px;
   margin-bottom: 80px;
-
   position: relative;
   width: 48vw;
   height: auto;
-
   border-radius: 16px;
   background-color: white;
-  
   border: 2px solid #1B1B1B;
   box-sizing: border-box;
   box-shadow: 6px 6px 0px #1B1B1B;
@@ -71,7 +67,8 @@ input {
   transition: 0.2s;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
   border: 3px solid #1B1B1B;
   border-radius: 16px;
@@ -106,22 +103,20 @@ span {
   border: 2px solid #1B1B1B;
   box-sizing: border-box;
   border-radius: 16px;
-  padding: 16px 32px 16px 16px;
+  padding: 16px 0px 16px 37px;
   text-align: center;
   font-weight: 800;
   margin-top: 20px;
-  
   width: 141px;
   height: 56px;
   left: 16px;
   top: 88px;
-  
   display: flex;
   flex-direction: row;
   align-items: center;
   align-self: flex-end;
   cursor: pointer;
-  transition: 0.16s ease-out;
+  /* transition: 0.16s ease-out; */
 }
 
 .btn:hover {
@@ -133,4 +128,3 @@ span {
 #exit {
   cursor: pointer;
 }
-

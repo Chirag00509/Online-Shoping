@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { ProductService } from '../../services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,13 +12,21 @@ export class ProductDetailsComponent implements OnInit {
   productData: any = [];
   productName: string = "";
 
-  constructor(private route: ActivatedRoute, private product:ProductService) { }
+  constructor(private route: ActivatedRoute, private product:ProductService, private cartService : CartService) { }
 
   ngOnInit(): void {
     let productId=this.route.snapshot.paramMap.get('id');
 
     productId && this.product.getProduct(productId).subscribe((result)=>{
       this.productData= result;
+
+      // this.productData.forEach((a : any) =>  {
+      //   Object.assign(a, {quantity : 1, total : a.discountPrice})
+      // })
     })
+  }
+
+  addToCart(data: any) {
+    this.cartService.addToCart(data)
   }
 }

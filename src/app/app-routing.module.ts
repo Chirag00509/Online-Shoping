@@ -3,9 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
-import { LoginComponent } from './user/login/login.component';
-import { RegistrationComponent } from './user/registration/registration.component';
-import{CheckoutComponent} from './pages/checkout/checkout.component'
+import { CheckoutComponent } from './pages/checkout/checkout.component'
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 const routes: Routes = [
   {
@@ -30,8 +29,12 @@ const routes: Routes = [
     component : ProductDetailsComponent
   },
   {
-    component:CheckoutComponent,
-    path:'checkout'
+    path:'checkout',
+    component: CheckoutComponent
+  },
+  {
+    path: 'confirmation',
+    component: ConfirmationComponent
   }
 ];
 
