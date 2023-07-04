@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="registration-form">
+    <form #frm = "ngForm" (submit)="registration(frm.value)">
+      <h1>Registration</h1>
+      <div class="content">
+        <div class="input-field">
+          <input type="text" ngModel placeholder="Name" name="name" autocomplete="nope">
+        </div>
+        <div class="input-field">
+          <input type="email" ngModel name="email" placeholder="Email" autocomplete="nope">
+        </div>
+        <div class="input-field">
+          <input type="password" ngModel name="password" placeholder="Password" autocomplete="new-password">
+        </div>
+        <span style="text-align: center;">Already you have an account <a routerLink="/user/login">Login</a></span>
+      </div>
+      <div class="action">
+        <button>Sign up</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

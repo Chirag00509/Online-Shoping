@@ -10,8 +10,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { FilterPipe } from './filter.pipe';
-import { LoginComponent } from './pages/user/login/login.component';
-import { RegistrationComponent } from './pages/user/registration/registration.component';
+import { LoginComponent } from './user/login/login.component';
+import { RegistrationComponent } from './user/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,6 @@ import { RegistrationComponent } from './pages/user/registration/registration.co
     CartComponent
     CheckoutComponent
     FilterPipe,
-    LoginComponent,
-    RegistrationComponent
   ],
   imports: [
     BrowserModule,
