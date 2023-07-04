@@ -24,8 +24,8 @@
                   <a [routerLink]="['/details',product.id]">
                     <h5 class="card-title">{{product.name}}</h5>
                   </a>
-                  <p class="card-text"><span class="text-danger fw-semibold me-2">${{product.discountPrice}}</span><del>
-                      ${{product.originalPrice}}</del>
+                  <p class="card-text"><span class="text-danger fw-semibold me-2">{{product.discountPrice | currency: 'INR' }}</span><del>
+                      {{product.originalPrice | currency: 'INR' }}</del>
                     <span class="text-success ms-2">35% Off</span>
                   </p>
                   <p class="description">{{product.description}}</p>
