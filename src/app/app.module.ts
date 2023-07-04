@@ -18,7 +18,7 @@ import { RegistrationComponent } from './pages/user/registration/registration.co
     AppComponent,
     HomeComponent,
     ProductDetailsComponent,
-    CartComponent,
+    CartComponent
     CheckoutComponent
     FilterPipe,
     LoginComponent,
