@@ -46,16 +46,15 @@
           <a class="nav-link">Contact us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">
+          <!-- <a class="nav-link" href="">
             <i class="fa fa-search fs-5" aria-hidden="true" style="font-size: 20px;"></i>
-          </a>
+          </a> -->
+          <input type="search" [(ngModel)] = "searchText" id="" class="form-control" placeholder="Search">
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink = "/sale">
-            <!-- <button type="button" (click)="navigate()"> -->
+          <a class="nav-link" routerLink = "/cart">
               <i class="fa fa-cart-plus fs-5" aria-hidden="true" style="font-size: 20px;"></i>
-              <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="margin-left: 2px;font-size: 9px;">2</span>
-            <!-- </button> -->
+              <span class="position-absolute translate-middle badge rounded-pill bg-danger" style="margin-left: 2px;font-size: 9px;">{{totalItem}}</span>
           </a>
         </li>
       </ul>

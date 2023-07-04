@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   productList: any[] = [];
 
-  constructor(private productService : ProductService) {}
+  constructor(private productService : ProductService, private cartService : CartService) {}
 
   ngOnInit(): void {
     debugger;
@@ -18,10 +19,18 @@ export class HomeComponent implements OnInit {
   }
 
   loadProduct() {
-    debugger
+    debugger;
     this.productService.getAllProducts().subscribe((result) => {
       this.productList = result
+
+      this.productList.forEach((a : any) =>  {
+        Object.assign(a, {quantity : 1, total : a.originalPrice})
+      })
     })
+  }
+
+  addToCart(item :any) {
+    this.cartService.addToCart(item);
   }
 
 }
