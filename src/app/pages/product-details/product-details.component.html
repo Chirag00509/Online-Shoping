@@ -1,7 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        	<div class="row">
+               <div class="col-xs-4 item-photo">
+                    <img style="max-width:75%;" src="https://m.media-amazon.com/images/I/41o-KkXEkSL._AC_UY218_.jpg" />
+                </div>
+                <div class="col-xs-5" style="border:0px solid gray">
+                    <h3>{{productData.name}}</h3>
+                    <h5 style="color:#337ab7">Laptop <a href="#">Samsung</a> · <small style="color:#337ab7">(5054 ventas)</small></h5>
+                    
+                    <h2 class="title-price"><small>Price:{{productData.discountPrice}}</small></h2>
+                    <p>Description: {{productData.description}}</p>
 
-<h1>{{productData.name}}</h1>
-<img   src="{{productData.image}}" alt="">
-<p>Price : {{productData.originalPrice}}</p>
-<p>Price : {{productData.discountPrice}}</p>
-<p>Description : {{productData.description}}</p>
-<button>Add To Cart</button>
+                    <div class="section" style="padding-bottom:5px;">
+                    </div>
+                    <div class="section" style="padding-bottom:20px;">
+                    </div>
+                </div>		
+            </div>
+        </div>
+    </body>
+</html>
