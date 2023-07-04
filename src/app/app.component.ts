@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './services/cart.service';
+import { SharedService } from './services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit {
   searchText:any;
   totalItem : number = 0 ;
 
-  constructor(private cartService : CartService) {}
+  constructor(private cartService : CartService, private sharedService : SharedService) {}
 
   ngOnInit(): void {
     this.cartService.getProduct().subscribe((res) => {
@@ -19,5 +20,8 @@ export class AppComponent implements OnInit {
     })
   }
 
+  onSearchChange() {
+    this.sharedService.setSearchValue(this.searchText);
+  }
 
 }
