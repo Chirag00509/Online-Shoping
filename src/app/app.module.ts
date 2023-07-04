@@ -6,15 +6,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CartComponent } from './pages/cart/cart.component';
-import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CartComponent,
-    FilterPipe
+    HomeComponent
   ],
   imports: [
     BrowserModule,
