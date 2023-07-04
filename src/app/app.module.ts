@@ -18,8 +18,8 @@ import { RegistrationComponent } from './user/registration/registration.componen
     AppComponent,
     HomeComponent,
     ProductDetailsComponent,
-    CartComponent
-    CheckoutComponent
+    CartComponent,
+    CheckoutComponent,
     FilterPipe,
   ],
   imports: [
