@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { FilterPipe } from './filter.pipe';
+import { LoginComponent } from './pages/user/login/login.component';
+import { RegistrationComponent } from './pages/user/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FilterPipe } from './filter.pipe';
     HomeComponent,
     ProductDetailsComponent,
     CartComponent,
-    FilterPipe
+    FilterPipe,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
