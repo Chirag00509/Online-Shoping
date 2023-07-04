@@ -10,8 +10,10 @@ export class ProductService {
   constructor(private http : HttpClient) { }
 
   getAllProducts(): Observable<any[]>  {
-    debugger;
+    //debugger;
     return this.http.get<any[]>("http://localhost:3000/products");
   }
-
+getProduct(id : any){
+  return this.http.get<any[]>("http://localhost:3000/products/"+id);
+}
 }

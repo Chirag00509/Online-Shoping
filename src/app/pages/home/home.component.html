@@ -17,8 +17,9 @@
                   <div class="col-lg-3 pt-1" *ngFor="let product of productList">
                       <div class="box-shadow">
                           <div class="card" style="width: 275px;">
+                            <a [routerLink]="['/details',product.id]">
                               <img class="img-fluid" style="height: 200px;" [src]="product.image" class="card-img-top"
-                                  alt="...">
+                                  alt="..."></a>
                               <div class="card-body">
                                   <h5 class="card-title">{{product.name}}</h5>
                                   <p class="card-text"><span
