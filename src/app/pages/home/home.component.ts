@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       this.productList = result
 
       this.productList.forEach((a : any) =>  {
-        Object.assign(a, {quantity : 1, total : a.originalPrice})
+        Object.assign(a, {quantity : 1, total : a.discountPrice})
       })
     })
   }
