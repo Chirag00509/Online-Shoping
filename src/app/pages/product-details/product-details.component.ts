@@ -18,15 +18,15 @@ export class ProductDetailsComponent implements OnInit {
     let productId=this.route.snapshot.paramMap.get('id');
 
     productId && this.product.getProduct(productId).subscribe((result)=>{
-      this.productData= result;
+      this.productData= result
 
-      // this.productData.forEach((a : any) =>  {
-      //   Object.assign(a, {quantity : 1, total : a.discountPrice})
-      // })
+      this.productData.forEach((a : any) =>  {
+        Object.assign(a, {quantity : 1, total : a.discountPrice})
+      })
     })
   }
 
-  addToCart(data: any) {
+  addToCart(data: any[]) {
     this.cartService.addToCart(data)
   }
 }

@@ -10,6 +10,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { FilterPipe } from './filter.pipe';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
+import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ConfirmationComponent } from './pages/confirmation/confirmation.compone
     CartComponent,
     CheckoutComponent,
     FilterPipe,
-    ConfirmationComponent
+    ConfirmationComponent,
+    OrderHistoryComponent
    ],
   imports: [
     BrowserModule,

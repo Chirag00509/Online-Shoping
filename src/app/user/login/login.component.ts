@@ -19,6 +19,7 @@ export class LoginComponent {
     this.userService.getUser().subscribe((users: any[]) => {
       const user = users.find(u => u.email === data.email && u.password === data.password);
       if(user) {
+        localStorage.setItem("current User", user.id.toString());
         this.router.navigateByUrl('/home');
       } else {
         alert("Your email and password dose not match");

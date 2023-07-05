@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <div class="productHeading text-center">
-          <h2 class="mb-3">Exclusive Products</h2>
+          <h2 class="mb-3 mt-4">Exclusive Products</h2>
           <ul class="list-unstyled d-flex   justify-content-center ">
             <li><a href="#" class=" m-4  text-decoration-none text-danger fw-semibold  ">New Arrival</a></li>
             <li><a href="#" class=" m-4  text-decoration-none fw-semibold text-black">Best Sellers</a></li>
@@ -21,7 +21,7 @@
                   <img class="img-fluid" style="height: 200px;" [src]="product.image" class="card-img-top"
                     alt="..."></a>
                 <div class="card-body">
-                  <a [routerLink]="['/details',product.id]">
+                  <a [routerLink]="['/details',product.id]" style="text-decoration: none; color: black;">
                     <h5 class="card-title">{{product.name}}</h5>
                   </a>
                   <p class="card-text"><span class="text-danger fw-semibold me-2">{{product.discountPrice | currency: 'INR' }}</span><del>
@@ -30,11 +30,11 @@
                   </p>
                   <p class="description">{{product.description}}</p>
                   <div class="row">
-                    <div class="col-6">
+                    <!-- <div class="col-6">
                       <i class="fa-solid fa-star-half-stroke  m-0" style="color: #f1f50f;"></i>
                       <span class="text-muted">(21)</span>
-                    </div>
-                    <div class="col-6 text-end">
+                    </div> -->
+                    <div class="col-6 text-end" style="width: 100%;">
                       <button class="btn btn-sm btn-success" (click)="addToCart(product)"> Add To Cart</button>
                     </div>
                   </div>
