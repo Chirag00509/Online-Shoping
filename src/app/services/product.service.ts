@@ -13,7 +13,8 @@ export class ProductService {
     //debugger;
     return this.http.get<any[]>("http://localhost:3000/products");
   }
-getProduct(id : any){
-  return this.http.get<any[]>("http://localhost:3000/products/"+id);
-}
+
+  getProduct(id : any): Observable<any>{
+    return this.http.get<any>("http://localhost:3000/products/"+id);
+  }
 }
