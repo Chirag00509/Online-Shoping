@@ -104,6 +104,9 @@
   "orders": [
     {
       "userId": "1",
+      "cutomerName": "test123",
+      "cutomerEmail": "chiraglabha31@gmail.com",
+      "cutomerAddress": "Monalisa business center ",
       "item": [
         {
           "id": 6,
@@ -118,7 +121,7 @@
       ],
       "grandTotal": 28040,
       "orderDate": "7/5/2023",
-      "id": 1
+      "id": 2
     }
   ]
 }

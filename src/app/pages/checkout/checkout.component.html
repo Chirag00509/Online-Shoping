@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-75" style="margin-top: 25px;">
     <div class="container">
-      <form #frm = "ngForm" >
+      <form #frm = "ngForm" (submit)="placeOrder(frm.value)" >
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
@@ -58,7 +58,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <button [disabled] = "frm.invalid" type="submit" (click)="placeOrder()" class="btn"> Continue to checkout </button>
+        <button [disabled] = "frm.invalid" type="submit" class="btn"> Continue to checkout </button>
       </form>
     </div>
   </div>

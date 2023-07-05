@@ -35,13 +35,17 @@ export class CheckoutComponent implements OnInit {
     this.useId = localStorage.getItem("current User")
   }
 
-  placeOrder() {
+  placeOrder(data: any) {
     const order = {
       userId : this.useId,
+      cutomerName : data.firstname,
+      cutomerEmail : data.email,
+      cutomerAddress : data.address,
       item : this.productList,
       grandTotal:this.subTotal,
       orderDate:new Date().toLocaleDateString()
     }
+
     this.orderService.addOrder(order).subscribe((res) => {
       this.orderId = res.id;
       this.router.navigate(["/confirmation", this.orderId]);
