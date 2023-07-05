@@ -106,57 +106,19 @@
       "userId": "1",
       "item": [
         {
-          "id": 2,
-          "name": "Acer Extensa",
-          "originalPrice": 35000,
-          "discountPrice": 30000,
-          "image": "https://m.media-amazon.com/images/I/71IfO70KcRL._SY450_.jpg",
-          "description": "The New Intel N305 Series: Intel Core i3 8-core N305 Processor with Intel UHD Graphics",
+          "id": 6,
+          "name": "Acer One 14 AMD Ryzen ",
+          "originalPrice": 30000,
+          "discountPrice": 28000,
+          "image": "https://m.media-amazon.com/images/I/71NKq8zV8ML._SX679_.jpg",
+          "description": " HD Display, 16:9 aspect Display: 15.6| TN Technology Display | 250Nits Brightness |",
           "quantity": 1,
-          "total": 30000
-        },
-        {
-          "id": 10,
-          "name": "Dell Inspiron 7420 2in1 Laptop",
-          "originalPrice": 90000,
-          "discountPrice": 75000,
-          "image": "https://m.media-amazon.com/images/I/61ZQEkRzQaL._SY450_.jpg",
-          "description": "Ports: 1 HDMI out 1.4, 1 USB 3.2 Gen 1 Type-A , 2 USB 3.2 Gen 2x2 Type-C ",
-          "quantity": 1,
-          "total": 75000
+          "total": 28000
         }
       ],
-      "grandTotal": 105000,
+      "grandTotal": 28040,
       "orderDate": "7/5/2023",
       "id": 1
-    },
-    {
-      "userId": "1",
-      "item": [
-        {
-          "id": 1,
-          "name": "Dell Vostro",
-          "originalPrice": 48000,
-          "discountPrice": 42000,
-          "image": "https://m.media-amazon.com/images/I/61G5EPaVmXL._SX679_.jpg",
-          "description": "Processor: Intel Core i3-1115G4 11th Generation (up to 4.10 GHz) 2 Cores, 6MB Cache ",
-          "quantity": 1,
-          "total": 42000
-        },
-        {
-          "id": 2,
-          "name": "Acer Extensa",
-          "originalPrice": 35000,
-          "discountPrice": 30000,
-          "image": "https://m.media-amazon.com/images/I/71IfO70KcRL._SY450_.jpg",
-          "description": "The New Intel N305 Series: Intel Core i3 8-core N305 Processor with Intel UHD Graphics",
-          "quantity": 1,
-          "total": 30000
-        }
-      ],
-      "grandTotal": 72000,
-      "orderDate": "7/5/2023",
-      "id": 2
     }
   ]
 }

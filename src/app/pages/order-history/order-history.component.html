@@ -1,34 +1,44 @@
-<div class="container mt-5">
+<ng-container *ngIf="productList.length > 0">
+  <div class="container mt-5">
     <h2>Order History</h2>
-    <ng-container *ngIf="productList.length > 0">
-      <div *ngFor="let product of productList" class="card mt-4">
-        <div class="card-header">
-          Order ID: {{ product.id }}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Order Details</h5>
-          <ul class="list-group">
-            <li class="list-group-item" *ngFor="let item of product.item">
-              <div class="row">
-                <div class="col-md-2">
-                  <img src="{{ item.image }}" alt="Product Image" class="img-fluid">
-                </div>
-                <div class="col-md-10">
-                  <h6>{{ item.name }}</h6>
-                  <p>Price: ${{ item.discountPrice }}</p>
-                  <p>Quantity: {{ item.quantity }}</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <p>Grand Total: ${{ product.grandTotal }}</p>
-          <p>Date: {{ product.orderDate }}</p>
-        </div>
+    <div *ngFor="let product of productList" class="card mt-4">
+      <div class="card-header">
+        Order ID: {{ product.id }}
       </div>
-    </ng-container>
-    <ng-container *ngIf="productList.length === 0">
-      <p>No orders found.</p>
-    </ng-container>
-</div>
+      <div class="card-body">
+        <h5 class="card-title">Order Details</h5>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of product.item">
+            <div class="row">
+              <div class="col-md-2">
+                <img src="{{ item.image }}" alt="Product Image" class="img-fluid">
+              </div>
+              <div class="col-md-10">
+                <h6>{{ item.name }}</h6>
+                <p>Price: {{ item.discountPrice | currency : 'INR' }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <p>Grand Total: {{ product.grandTotal | currency : 'INR' }}</p>
+        <p>Date: {{ product.orderDate }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="productList.length === 0">
+  <div class="container1">
+    <div class="card">
+      <h5 class="card-title">Your orders</h5>
+    </div>
+    <div class="center">
+      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/no-item-found-4372183-3626865.png" alt="">
+      <h4>Order is not found</h4>
+      <h6>Add item to it now</h6>
+      <button routerLink="/home" class="btn btn-primary">Shop Now</button>
+    </div>
+  </div>
+</ng-container>

@@ -5,7 +5,7 @@
     </div>
     <div class="col-12 col-md-5" style="margin-top: 81px;">
       <h3 style="font-size: 25px; margin-bottom: 30px;">{{productData.name}}</h3>
-      <h2 class="title-price" style="color: black; font-weight: 450;"><small>Price: {{productData.discountPrice}}
+      <h2 class="title-price" style="color: black; font-weight: 450;"><small>Price: {{ productData.discountPrice | currency : 'INR' }}
         </small></h2>
       <p>Description: {{productData.description}}</p>
       <button class="btn btn-success" style="width: 100%; margin-top: 10px;" (click)="addToCart(productData)">Add to

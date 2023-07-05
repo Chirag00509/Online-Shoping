@@ -20,7 +20,6 @@ export class OrderHistoryComponent implements OnInit {
   getProduct() {
     this.userId = localStorage.getItem("current User");
     this.orderService.getOrderHistory(this.userId).subscribe((res) => {
-      console.log(res);
       this.productList = res;
     })
   }

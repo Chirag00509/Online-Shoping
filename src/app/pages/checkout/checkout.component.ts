@@ -39,7 +39,7 @@ export class CheckoutComponent implements OnInit {
     const order = {
       userId : this.useId,
       item : this.productList,
-      grandTotal:this.grandTotal,
+      grandTotal:this.subTotal,
       orderDate:new Date().toLocaleDateString()
     }
     this.orderService.addOrder(order).subscribe((res) => {
