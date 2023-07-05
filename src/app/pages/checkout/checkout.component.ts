@@ -18,6 +18,8 @@ export class CheckoutComponent implements OnInit {
 
   useId? : string | null
 
+  orderId: number = 0;
+
   constructor(private router : Router, private cartService : CartService, private orderService : OrderService) {}
 
   ngOnInit(): void {
@@ -40,8 +42,10 @@ export class CheckoutComponent implements OnInit {
       grandTotal:this.grandTotal,
       orderDate:new Date().toLocaleDateString()
     }
-    this.orderService.addOrder(order).subscribe();
-    this.router.navigateByUrl("/confirmation");
+    this.orderService.addOrder(order).subscribe((res) => {
+      this.orderId = res.id;
+      this.router.navigate(["/confirmation", this.orderId]);
+    });
   }
 
 

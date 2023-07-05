@@ -34,7 +34,7 @@ const routes: Routes = [
     component: CheckoutComponent
   },
   {
-    path: 'confirmation',
+    path: 'confirmation/:id',
     component: ConfirmationComponent
   },
   {

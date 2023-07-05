@@ -17,4 +17,8 @@ export class OrderService {
     return this.http.get<any[]>("http://localhost:3000/orders/?userId="+ id)
   }
 
+  getOrder(id: any) : Observable<any[]> {
+    return this.http.get<any[]>("http://localhost:3000/orders/?id="+ id)
+  }
+
 }

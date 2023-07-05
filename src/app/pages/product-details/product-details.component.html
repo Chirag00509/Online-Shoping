@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-</head>
-
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4 item-photo">
-        <img style="max-width:75%;" src="{{productData.image}}" />
-      </div>
-      <div class="col-xs-5" style="border:0px solid gray">
-        <h3>{{productData.name}}</h3>
-        <h5 style="color:#337ab7">Laptop <a href="#">Samsung</a> · <small style="color:#337ab7">(5054 ventas)</small>
-        </h5>
-        <h2 class="title-price"><small>Price:{{productData.discountPrice}}</small></h2>
-        <p class="title-price">Description: {{productData.description}}</p>
-        <button class="btn btn-success" (click)="addToCart(productData)">Add to cart</button>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4 item-photo">
+      <img style="max-width: 100%;" src="{{productData.image}}" />
+    </div>
+    <div class="col-12 col-md-5" style="margin-top: 81px;">
+      <h3 style="font-size: 25px; margin-bottom: 30px;">{{productData.name}}</h3>
+      <h2 class="title-price" style="color: black; font-weight: 450;"><small>Price: {{productData.discountPrice}}
+        </small></h2>
+      <p>Description: {{productData.description}}</p>
+      <button class="btn btn-success" style="width: 100%; margin-top: 10px;" (click)="addToCart(productData)">Add to
+        cart</button>
     </div>
   </div>
-</body>
-
-</html>
+</div>

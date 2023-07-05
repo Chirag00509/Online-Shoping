@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-confirmation',
@@ -8,7 +10,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor( private cartService : CartService ) { }
+  constructor( private orderService : OrderService, private router : ActivatedRoute, private cartService : CartService ) { }
 
   productList: any[] = [];
 
@@ -16,18 +18,22 @@ export class ConfirmationComponent implements OnInit {
 
   subTotal : number = 0;
 
+  orderId : number = 0;
 
   currentDate = new Date().toDateString();
 
   ngOnInit() {
-    this.loadProduct();
+    this.orderId = this.router.snapshot.params['id'];
+    this.loadProduct(this.orderId);
   }
 
-  loadProduct() {
-    this.cartService.getProduct().subscribe((res) => {
+  loadProduct(id : any) {
+    this.orderService.getOrder(id).subscribe((res) => {
+      console.log(res);
       this.productList = res;
     })
     this.grandTotal = this.cartService.getTotalPrice();
     this.subTotal = this.grandTotal + 40;
+    this.cartService.removeAllitem();
   }
 }
