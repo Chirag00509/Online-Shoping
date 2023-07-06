@@ -31,9 +31,8 @@ export class CartService {
   getTotalPrice() : number {
     let grandTotal = 0;
     this.cartItemList.map((products : any) => {
-      grandTotal += products.discountPrice
+      grandTotal += products.total
     })
-
     return grandTotal;
   }
 
@@ -49,6 +48,16 @@ export class CartService {
   removeAllitem() {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
+  }
+
+  updateCartQuantity(product: any, quantity: number) {
+    const item = this.cartItemList.find((item: any) => item.id == product.id);
+
+    if(item) {
+      item.quantity = quantity;
+      item.total = item.discountPrice * quantity;
+      this.productList.next(this.cartItemList);
+    }
   }
 
 }

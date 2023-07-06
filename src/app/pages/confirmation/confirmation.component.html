@@ -34,7 +34,7 @@
                 <tr *ngFor="let item of product.item">
                   <td width="20%"> <img src="{{item.image}}" width="90"> </td>
                   <td width="60%"> <span class="font-weight-bold">{{item.name}}</span>
-                    <div class="product-qty"> <span class="d-block">Quantity:1</span> </div>
+                    <div class="product-qty"> <span class="d-block">Quantity: {{item.quantity}}</span> </div>
                   </td>
                   <td width="20%">
                     <div class="text-right"> <span class="font-weight-bold">{{item.discountPrice | currency : 'INR'}}</span> </div>
