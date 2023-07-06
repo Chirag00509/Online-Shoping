@@ -29,13 +29,14 @@
     </div>
   </div>
 </ng-container>
+
 <ng-container *ngIf="productList.length === 0">
   <div class="container1">
-    <div class="card">
+    <div class="card" style="height: 70vh; margin: 25px; padding: 25px;">
       <h5 class="card-title">Your orders</h5>
     </div>
     <div class="center">
-      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/no-item-found-4372183-3626865.png" alt="">
+      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/no-item-found-4372183-3626865.png" alt="" style="text-decoration: none; color: inherit; border: none; outline: none; height: 162px; width: 240px; margin: 20px 0px;">
       <h4>Order is not found</h4>
       <h6>Add item to it now</h6>
       <button routerLink="/home" class="btn btn-primary">Shop Now</button>
