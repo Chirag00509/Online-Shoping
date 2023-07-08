@@ -12,6 +12,7 @@ import { FilterPipe } from './filter.pipe';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CanDeactivateGuardService } from './services/auth/deactivated.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  cart: any;
+
+  constructor(private cartService: CartService) { }
 
   isLoggedIn() {
     const userId = localStorage.getItem("current User");
 
-    if(userId) {
+    if (userId) {
       return true;
     }
-
     return false;
+  }
+
+  cartEmpty(): boolean {
+    this.cart = this.cartService.getProductLength()
+      if (this.cart > 0) {
+        console.log("true");
+        return true;
+      }
+      console.log("flase");
+
+      return false;
   }
 }
