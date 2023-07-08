@@ -8,8 +8,6 @@ export const cartauthGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  console.log(authService.cartEmpty());
-
   if(authService.cartEmpty()){
     return true;
   }

@@ -80,25 +80,28 @@ export class CheckoutComponent implements OnInit {
 
   canExit() : boolean {
     if(this.isFormEmpty()) {
+      console.log("Hello");
+
       return  confirm('You have unsaved changes. Do you really want to discard these changes?');
     }
 
     return true;
   }
 
+
   isFormEmpty(): boolean {
     const formValues = this.checkoutPage.value;
     return (
-      formValues.name === '' &&
-      formValues.email === '' &&
-      formValues.address === '' &&
-      formValues.city === '' &&
-      formValues.state === '' &&
-      formValues.zip === '' &&
-      formValues.cname === '' &&
-      formValues.cnumber === '' &&
-      formValues.emonth === '' &&
-      formValues.expyear === '' &&
+      formValues.name === '' ||
+      formValues.email === '' ||
+      formValues.address === '' ||
+      formValues.city === '' ||
+      formValues.state === '' ||
+      formValues.zip === '' ||
+      formValues.cname === '' ||
+      formValues.cnumber === '' ||
+      formValues.emonth === '' ||
+      formValues.expyear === '' ||
       formValues.cvv === ''
     );
   }

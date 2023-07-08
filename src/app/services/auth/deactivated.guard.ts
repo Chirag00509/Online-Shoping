@@ -12,6 +12,8 @@ export class CanDeactivateGuardService implements CanDeactivate<CheckoutComponen
   constructor(private cartService : CartService) {}
     canDeactivate(component: CheckoutComponent): boolean{
 
+      console.log(component.isFormEmpty());
+
       if(component.isFormEmpty()) {
         this.cartService.removeAllitem();
       }

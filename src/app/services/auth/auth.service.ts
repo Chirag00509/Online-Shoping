@@ -22,11 +22,8 @@ export class AuthService {
   cartEmpty(): boolean {
     this.cart = this.cartService.getProductLength()
       if (this.cart > 0) {
-        console.log("true");
         return true;
       }
-      console.log("flase");
-
       return false;
   }
 }
