@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  products : any = [];
-  grandTotal! : number;
+  products: any = [];
+  grandTotal!: number;
 
-  constructor(private cartService : CartService, private router : Router) {}
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.cartService.getProduct().subscribe((res) => {
@@ -21,26 +21,25 @@ export class CartComponent implements OnInit {
     })
   }
 
-
   emptycart() {
     this.cartService.removeAllitem();
   }
 
-  removeItem(item : any) {
+  removeItem(item: any) {
     this.cartService.removeCartItem(item);
   }
   checkout() {
     this.router.navigate(['/checkout'])
   }
 
-  decrement(item : any) {
+  decrement(item: any) {
     if (item.quantity > 1) {
-    this.cartService.updateCartQuantity(item, item.quantity - 1);
-    this.grandTotal = this.cartService.getTotalPrice();
+      this.cartService.updateCartQuantity(item, item.quantity - 1);
+      this.grandTotal = this.cartService.getTotalPrice();
     }
   }
 
-  icrement(item :any) {
+  icrement(item: any) {
     this.cartService.updateCartQuantity(item, item.quantity + 1);
     this.grandTotal = this.cartService.getTotalPrice();
   }

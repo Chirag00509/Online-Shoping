@@ -10,26 +10,26 @@ import { OrderService } from '../../services/order.service';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor( private orderService : OrderService, private router : ActivatedRoute, private cartService : CartService ) { }
+  constructor(private orderService: OrderService, private router: ActivatedRoute, private cartService: CartService) { }
 
   productList: any[] = [];
 
-  grandTotal : number = 0;
+  grandTotal: number = 0;
 
-  subTotal : number = 0;
+  subTotal: number = 0;
 
-  orderId : number = 0;
+  orderId: number = 0;
 
   currentDate = new Date().toDateString();
 
   ngOnInit() {
+    console.log(this.router.snapshot);
     this.orderId = this.router.snapshot.params['id'];
     this.loadProduct(this.orderId);
   }
 
-  loadProduct(id : any) {
+  loadProduct(id: any) {
     this.orderService.getOrder(id).subscribe((res) => {
-      console.log(res);
       this.productList = res;
     })
     this.grandTotal = this.cartService.getTotalPrice();

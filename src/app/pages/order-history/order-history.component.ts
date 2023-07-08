@@ -9,9 +9,9 @@ import { OrderService } from '../../services/order.service';
 export class OrderHistoryComponent implements OnInit {
 
   productList: any[] = [];
-  userId? : string | null;
+  userId?: string | null;
 
-  constructor(private orderService : OrderService) {}
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.getProduct();
