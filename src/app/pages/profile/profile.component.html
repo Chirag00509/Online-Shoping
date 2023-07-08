@@ -2,17 +2,18 @@
   <label for="name">Name</label>
   <input type="text" name="name" id="" formControlName="name" [ngClass]="{ error: getControl('name')?.errors && getControl('name')?.touched }">
   <span *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red;">Name is required.</span>
-  <!-- <span *ngIf="getControl('name').errors?.pattern && updateForm.get('name').touched">Invalid name format.</span> -->
   <br> <br>
 
   <label for="email">Email</label>
   <input type="email" name="email" id="" formControlName="email" [ngClass]="{error: getControl('email')?.errors && getControl('email')?.touched }" >
-  <span *ngIf="getControl('email')?.errors && getControl('name')?.touched" style="color: red;">Email is required.</span>
+  <span *ngIf="getControl('email')?.errors?.['required'] && getControl('name')?.touched" style="color: red;">Email is required.</span>
+  <span *ngIf="getControl('email')?.errors?.['email']" style="color: red;" >Invalid email format.</span>
   <br> <br>
 
   <label for="password">Password</label>
   <input type="password" name="password" id="" formControlName="password" [ngClass]="{error: getControl('password')?.errors && getControl('password')?.touched }" >
-  <span *ngIf="getControl('password')?.errors && getControl('password')?.touched" style="color: red;">Password is required.</span>
+  <span *ngIf="getControl('password')?.errors?.['required'] && getControl('password')?.touched" style="color: red;">Password is required.</span>
+  <span *ngIf="getControl('password')?.errors?.['minlength']" style="color: red;" >Password should have at least 6 characters.</span>
 
   <button>Update</button>
 </form>
