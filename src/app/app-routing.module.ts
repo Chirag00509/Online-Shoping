@@ -42,7 +42,7 @@ const routes: Routes = [
     path:'checkout',
     component: CheckoutComponent,
     canDeactivate : [CanDeactivateGuardService],
-    canActivate : [cartauthGuard]
+    canActivate : [cartauthGuard ,authGuard]
   },
   {
     path: 'confirmation/:id',

@@ -1,4 +1,7 @@
+<div class="container">
+
 <form [formGroup]="updateForm" (ngSubmit)="updateform(updateForm.value)">
+  <h2>Update Profile</h2>
   <label for="name">Name</label>
   <input type="text" name="name" id="" formControlName="name" [ngClass]="{ error: getControl('name')?.errors && getControl('name')?.touched }">
   <span *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red;">Name is required.</span>
@@ -13,7 +16,8 @@
   <label for="password">Password</label>
   <input type="password" name="password" id="" formControlName="password" [ngClass]="{error: getControl('password')?.errors && getControl('password')?.touched }" >
   <span *ngIf="getControl('password')?.errors?.['required'] && getControl('password')?.touched" style="color: red;">Password is required.</span>
-  <span *ngIf="getControl('password')?.errors?.['minlength']" style="color: red;" >Password should have at least 6 characters.</span>
+  <span *ngIf="getControl('password')?.errors?.['minlength']" style="color: red;" >Password should have at least 6 characters.</span> <br> <br>
 
   <button>Update</button>
 </form>
+</div>
