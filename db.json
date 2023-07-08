@@ -23,6 +23,12 @@
       "email": "nandini@gmail.com",
       "password": "nandini",
       "id": 4
+    },
+    {
+      "name": "test123",
+      "email": "test@gmail.com",
+      "password": "123456",
+      "id": 5
     }
   ],
   "products": [

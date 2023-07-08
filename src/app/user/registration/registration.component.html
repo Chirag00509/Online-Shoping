@@ -7,22 +7,25 @@
 </head>
 <body>
   <div class="registration-form">
-    <form #frm = "ngForm" (submit)="registration(frm.value)">
+    <form [formGroup]="register" (ngSubmit)="registration(register.value)" >
       <h1>Registration</h1>
       <div class="content">
         <div class="input-field">
-          <input type="text" ngModel placeholder="Name" name="name" autocomplete="nope">
+          <input type="text"  placeholder="Name" name="name" autocomplete="nope" class="form-control" formControlName="name" [ngClass]="{ error: getControl('name')?.errors && getControl('name')?.touched }">
+          <span *ngIf="getControl('name')?.errors && getControl('name')?.touched" style="color: red;">Name is required.</span>
         </div>
         <div class="input-field">
-          <input type="email" ngModel name="email" placeholder="Email" autocomplete="nope">
+          <input type="email"  name="email" placeholder="Email" autocomplete="nope" formControlName="email" [ngClass]="{ error: getControl('email')?.errors && getControl('email')?.touched }">
+          <span *ngIf="getControl('email')?.errors && getControl('email')?.touched" style="color: red;">Email is required.</span>
         </div>
         <div class="input-field">
-          <input type="password" ngModel name="password" placeholder="Password" autocomplete="new-password">
+          <input type="password" name="password" placeholder="Password" autocomplete="new-password" formControlName="password" [ngClass]="{ error: getControl('password')?.errors && getControl('password')?.touched }">
+          <span *ngIf="getControl('password')?.errors && getControl('password')?.touched" style="color: red;">Password is required.</span>
         </div>
         <span style="text-align: center;">Already you have an account <a routerLink="/user/login">Login</a></span>
       </div>
       <div class="action">
-        <button>Sign up</button>
+        <button [disabled]="register.invalid">Sign up</button>
       </div>
     </form>
   </div>
