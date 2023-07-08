@@ -3,17 +3,16 @@ import { AuthService } from './auth.service';
 import { inject } from '@angular/core';
 import { CartService } from '../cart.service';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const cartauthGuard: CanActivateFn = (route, state) => {
 
   const authService = inject(AuthService);
   const router = inject(Router);
-  const cartService = inject(CartService)
 
-  if(authService.isLoggedIn()){
+  console.log(authService.cartEmpty());
+
+  if(authService.cartEmpty()){
     return true;
   }
-
-   alert("you are not logged in ! please login to continue..")
-   return router.parseUrl('/user/login');
-
+   alert("Your cart is empty! Please add Items..")
+   return router.parseUrl('/home');
 };

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs'
+import { BehaviorSubject, Observable, map } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,10 @@ export class CartService {
 
   getProduct() {
     return this.productList.asObservable();
+  }
+
+  getProductLength(): number {
+   return this.cartItemList.length;
   }
 
   setProduct(product: any) {

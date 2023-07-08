@@ -8,6 +8,8 @@ import { ConfirmationComponent } from './pages/confirmation/confirmation.compone
 import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 import { authGuard } from './services/auth/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { cartauthGuard } from './services/auth/cartauth.guard';
+import { CanDeactivateGuardService } from './services/auth/deactivated.guard';
 
 const routes: Routes = [
   {
@@ -38,7 +40,9 @@ const routes: Routes = [
   },
   {
     path:'checkout',
-    component: CheckoutComponent
+    component: CheckoutComponent,
+    canDeactivate : [CanDeactivateGuardService],
+    canActivate : [cartauthGuard]
   },
   {
     path: 'confirmation/:id',
