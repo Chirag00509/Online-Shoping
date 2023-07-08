@@ -14,6 +14,10 @@
 form {
     width: 300px;
   }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
   
   label {
     display: block;
@@ -40,7 +44,7 @@ form {
   
   span {
     display: block;
-    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 14px;
   }
   
@@ -64,6 +68,10 @@ form {
     
   }
 
+
+   input.form-control.error {
+    border: 1px solid red;
+  }
   /* .update-form {
     background: #fff;
     width: 500px;
