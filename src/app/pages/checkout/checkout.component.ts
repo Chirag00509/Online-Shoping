@@ -12,15 +12,15 @@ export class CheckoutComponent implements OnInit {
 
   productList: any[] = [];
 
-  grandTotal : number = 0;
+  grandTotal: number = 0;
 
-  subTotal : number = 0;
+  subTotal: number = 0;
 
-  useId? : string | null
+  useId?: string | null
 
   orderId: number = 0;
 
-  constructor(private router : Router, private cartService : CartService, private orderService : OrderService) {}
+  constructor(private router: Router, private cartService: CartService, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -37,13 +37,13 @@ export class CheckoutComponent implements OnInit {
 
   placeOrder(data: any) {
     const order = {
-      userId : this.useId,
-      cutomerName : data.firstname,
-      cutomerEmail : data.email,
-      cutomerAddress : data.address,
-      item : this.productList,
-      grandTotal:this.subTotal,
-      orderDate:new Date().toLocaleDateString()
+      userId: this.useId,
+      cutomerName: data.firstname,
+      cutomerEmail: data.email,
+      cutomerAddress: data.address,
+      item: this.productList,
+      grandTotal: this.subTotal,
+      orderDate: new Date().toLocaleDateString()
     }
 
     this.orderService.addOrder(order).subscribe((res) => {

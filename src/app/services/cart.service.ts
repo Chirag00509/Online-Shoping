@@ -16,30 +16,29 @@ export class CartService {
     return this.productList.asObservable();
   }
 
-  setProduct(product : any) {
+  setProduct(product: any) {
     this.cartItemList.push(...product);
     this.productList.next(product);
   }
 
-  addToCart(product : any) {
+  addToCart(product: any) {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-
   }
 
-  getTotalPrice() : number {
+  getTotalPrice(): number {
     let grandTotal = 0;
-    this.cartItemList.map((products : any) => {
+    this.cartItemList.map((products: any) => {
       grandTotal += products.total
     })
     return grandTotal;
   }
 
-  removeCartItem(product : any) {
-    this.cartItemList.map((products : any, index: any) => {
-      if(product.id === products.id) {
-        this.cartItemList.splice(index,1)
+  removeCartItem(product: any) {
+    this.cartItemList.map((products: any, index: any) => {
+      if (product.id === products.id) {
+        this.cartItemList.splice(index, 1)
       }
       this.productList.next(this.cartItemList);
     })
@@ -53,7 +52,7 @@ export class CartService {
   updateCartQuantity(product: any, quantity: number) {
     const item = this.cartItemList.find((item: any) => item.id == product.id);
 
-    if(item) {
+    if (item) {
       item.quantity = quantity;
       item.total = item.discountPrice * quantity;
       this.productList.next(this.cartItemList);

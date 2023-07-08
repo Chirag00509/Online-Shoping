@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-75" style="margin-top: 25px;">
     <div class="container">
-      <form #frm = "ngForm" (submit)="placeOrder(frm.value)" >
+      <form #frm="ngForm" (submit)="placeOrder(frm.value)">
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
@@ -58,7 +58,7 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <button [disabled] = "frm.invalid" type="submit" class="btn"> Continue to checkout </button>
+        <button [disabled]="frm.invalid" type="submit" class="btn"> Continue to checkout </button>
       </form>
     </div>
   </div>
@@ -71,7 +71,8 @@
           <b>{{productList.length}}</b>
         </span>
       </h4>
-      <p *ngFor="let product of productList"> {{product.name}} <span class="price"> {{ product.discountPrice | currency : 'INR' }} </span> </p>
+      <p *ngFor="let product of productList"> {{product.name}} <span class="price"> {{ product.discountPrice | currency
+          : 'INR' }} </span> </p>
       <p> Shipping Fee <span class="price">₹40</span></p>
       <hr>
       <p>Total <span class="price" style="color:black"><b>{{subTotal | currency : 'INR' }}</b></span></p>
