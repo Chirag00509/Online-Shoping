@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
 import { SharedService } from '../../services/shared.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,10 @@ export class HomeComponent implements OnInit {
   productList: any[] = [];
 
   searchValue: string = '';
+
+  filterForm!: FormGroup;
+  categoryFilterControl: FormControl = new FormControl('');
+  sortFilterControl: FormControl = new FormControl('');
 
 
   constructor(private productService: ProductService, private cartService: CartService, private sharedService: SharedService) { }

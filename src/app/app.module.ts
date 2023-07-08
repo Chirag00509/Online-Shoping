@@ -13,6 +13,8 @@ import { ConfirmationComponent } from './pages/confirmation/confirmation.compone
 import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CanDeactivateGuardService } from './services/auth/deactivated.guard';
+import { SortPipe } from './sort.pipe';
+import { CategoryPipe } from './category.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CanDeactivateGuardService } from './services/auth/deactivated.guard';
     FilterPipe,
     ConfirmationComponent,
     OrderHistoryComponent,
-    ProfileComponent
+    ProfileComponent,
+    SortPipe,
+    CategoryPipe
    ],
   imports: [
     BrowserModule,
