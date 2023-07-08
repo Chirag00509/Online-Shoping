@@ -7,6 +7,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component'
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { OrderHistoryComponent } from './pages/order-history/order-history.component';
 import { authGuard } from './services/auth/auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     path:"",
     redirectTo:"/user/login",
     pathMatch:'full'
+  },
+  {
+    path:"profile",
+    component: ProfileComponent,
+    canActivate : [authGuard]
   },
   {
     path: "home",
@@ -32,8 +38,7 @@ const routes: Routes = [
   },
   {
     path:'checkout',
-    component: CheckoutComponent,
-    canActivate: [authGuard]
+    component: CheckoutComponent
   },
   {
     path: 'confirmation/:id',
@@ -41,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: 'history',
-    component: OrderHistoryComponent
+    component: OrderHistoryComponent,
+    canActivate: [authGuard]
   }
 ];
 
